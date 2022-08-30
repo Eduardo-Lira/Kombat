@@ -176,3 +176,5 @@ class Joystick:
                     if salud_arnaldor == 0:
                         print(f"Tonyn es el victorioso con {salud_tonyn} de energia restante")
                         break
+        if salud_tonyn > 0 and salud_arnaldor > 0:
+            print("Tenemos un Empate. Ambos jugadores lucharon valerosamente hasta el ultimo minuto.")
