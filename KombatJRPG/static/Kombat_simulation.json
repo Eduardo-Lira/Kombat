@@ -1,0 +1,12 @@
+{
+  "Jugadores": {
+    "tonyn": {
+      "movimientos": ["D","DSD","S","DSD","SD"],
+      "golpes": ["K","P","","K","P"]
+    },
+    "arnaldor": {
+      "movimientos": ["SA","SA","SA","ASA","SA"],
+      "golpes": ["K","","K","P","P"]
+    }
+  }
+}
