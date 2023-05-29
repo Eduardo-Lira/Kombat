@@ -80,6 +80,7 @@ class Joystick:
                 return arnaldor
 
     def resultado_pelea(self, primer_turno, combinacion_tonyn, combinacion_arnaldor):
+        resultado_final = ""
         salud_tonyn = 6
         salud_arnaldor = 6
         if primer_turno == 'tonyn':
@@ -92,19 +93,24 @@ class Joystick:
                     if movimiento_tonyn == '':
                         salud_arnaldor = salud_arnaldor - int(self.energia_movimientos(golpe_tonyn))
                         print(f"Tonyn lanza una {self.tonyn_movimientos(golpe_tonyn)}")
+                        resultado_final = (resultado_final + f"Tonyn lanza una {self.tonyn_movimientos(golpe_tonyn)}""\n")
                     elif golpe_tonyn == '':
                         print(f"Tonyn se mueve pero no ejecuta un golpe")
+                        resultado_final = (resultado_final + f"Tonyn se mueve pero no ejecuta un golpe""\n")
                     else:
                         salud_arnaldor = salud_arnaldor - int(self.energia_movimientos(golpe_tonyn))
                         print(f"Tonyn se mueve y ejecuta un {self.tonyn_movimientos(golpe_tonyn)}")
+                        resultado_final = (resultado_final + f"Tonyn se mueve y ejecuta un {self.tonyn_movimientos(golpe_tonyn)}""\n")
                 else:
                     especial_daño_tonyn = self.energia_movimientos(ejecucion_tonyn)
                     especial_nombre_tonyn = self.tonyn_movimientos(ejecucion_tonyn)
                     salud_arnaldor = salud_arnaldor - int(especial_daño_tonyn)
                     print(f"Tonyn conecto un {especial_nombre_tonyn}")
+                    resultado_final = (resultado_final + f"Tonyn conecto un {especial_nombre_tonyn}""\n")
 
                 if salud_arnaldor == 0:
                     print(f"Tonyn es el victorioso con {salud_tonyn} de energia restante")
+                    resultado_final = (resultado_final + f"Tonyn es el victorioso con {salud_tonyn} de energia restante""\n")
                     break
 
                 ejecucion_arnaldor = combinacion_arnaldor[turno]
@@ -115,19 +121,25 @@ class Joystick:
                     if movimiento_arnaldor == '':
                         salud_tonyn = salud_tonyn - int(self.energia_movimientos(golpe_arnaldor))
                         print(f"Arnaldor lanza una {self.arnaldor_movimientos(golpe_arnaldor)}")
+                        resultado_final = (resultado_final + f"Arnaldor lanza una {self.arnaldor_movimientos(golpe_arnaldor)}""\n")
+
                     elif golpe_arnaldor == '':
                         print(f"Arnaldor se mueve pero no ejecuta un golpe")
+                        resultado_final = (resultado_final + "Arnaldor se mueve pero no ejecuta un golpe""\n")
                     else:
                         salud_tonyn = salud_tonyn - int(self.energia_movimientos(golpe_arnaldor))
                         print(f"Arnaldor se mueve y ejecuta un {self.arnaldor_movimientos(golpe_arnaldor)}")
+                        resultado_final = (resultado_final + f"Arnaldor se mueve y ejecuta un {self.arnaldor_movimientos(golpe_arnaldor)}""\n")
                 else:
                     especial_daño_arnaldor = self.energia_movimientos(ejecucion_arnaldor)
                     especial_nombre_arnaldor = self.arnaldor_movimientos(ejecucion_arnaldor)
                     salud_tonyn = salud_tonyn - int(especial_daño_arnaldor)
                     print(f"Arnaldor conecto un {especial_nombre_arnaldor}")
+                    resultado_final = (resultado_final + f"Arnaldor conecto un {especial_nombre_arnaldor}""\n")
 
                 if salud_tonyn == 0:
                     print(f"Arnaldor es el victorioso con {salud_arnaldor} de energia restante")
+                    resultado_final = (resultado_final + f"Arnaldor es el victorioso con {salud_arnaldor} de energia restante""\n")
                     break
         else:
             for turno in range(len(combinacion_tonyn)):
@@ -139,19 +151,27 @@ class Joystick:
                     if movimiento_arnaldor == '':
                         salud_tonyn = salud_tonyn - int(self.energia_movimientos(golpe_arnaldor))
                         print(f"Arnaldor lanza una {self.arnaldor_movimientos(golpe_arnaldor)}")
+                        resultado_final = (resultado_final + f"Arnaldor lanza una {self.arnaldor_movimientos(golpe_arnaldor)}""\n")
+
                     elif golpe_arnaldor == '':
                         print(f"Arnaldor se mueve pero no ejecuta un golpe")
+                        resultado_final = (resultado_final + f"Arnaldor se mueve pero no ejecuta un golpe""\n")
+
                     else:
                         salud_tonyn = salud_tonyn - int(self.energia_movimientos(golpe_arnaldor))
                         print(f"Arnaldor se mueve y ejecuta un {self.arnaldor_movimientos(golpe_arnaldor)}")
+                        resultado_final = (resultado_final + f"Arnaldor se mueve y ejecuta un {self.arnaldor_movimientos(golpe_arnaldor)}""\n")
+
                 else:
                     especial_daño_arnaldor = self.energia_movimientos(ejecucion_arnaldor)
                     especial_nombre_arnaldor = self.arnaldor_movimientos(ejecucion_arnaldor)
                     salud_tonyn = salud_tonyn - int(especial_daño_arnaldor)
                     print(f"Arnaldor conecto un {especial_nombre_arnaldor}")
-    
+                    resultado_final = (resultado_final + f"Arnaldor conecto un {especial_nombre_arnaldor}""\n")
+
                 if salud_tonyn == 0:
                     print(f"Arnaldor es el victorioso con {salud_arnaldor} de energia restante")
+                    resultado_final = (resultado_final + f"Arnaldor es el victorioso con {salud_arnaldor} de energia restante""\n")
                     break
     
                     ejecucion_tonyn = combinacion_tonyn[turno]
@@ -162,19 +182,30 @@ class Joystick:
                         if movimiento_tonyn == '':
                             salud_arnaldor = salud_arnaldor - int(self.energia_movimientos(golpe_tonyn))
                             print(f"Tonyn lanza una {self.tonyn_movimientos(golpe_tonyn)}")
+                            resultado_final = (resultado_final + f"Tonyn lanza una {self.tonyn_movimientos(golpe_tonyn)}""\n")
+
                         elif golpe_tonyn == '':
                             print(f"Tonyn se mueve pero no ejecuta un golpe")
+                            resultado_final = (resultado_final + f"Tonyn se mueve pero no ejecuta un golpe""\n")
+
                         else:
                             salud_arnaldor = salud_arnaldor - int(self.energia_movimientos(golpe_tonyn))
                             print(f"Tonyn se mueve y ejecuta un {self.tonyn_movimientos(golpe_tonyn)}")
+                            resultado_final = (resultado_final + f"Tonyn se mueve y ejecuta un {self.tonyn_movimientos(golpe_tonyn)}""\n")
+
                     else:
                         especial_daño_tonyn = self.energia_movimientos(ejecucion_tonyn)
                         especial_nombre_tonyn = self.tonyn_movimientos(ejecucion_tonyn)
                         salud_arnaldor = salud_arnaldor - int(especial_daño_tonyn)
                         print(f"Tonyn conecto un {especial_nombre_tonyn}")
-    
+                        resultado_final = (resultado_final + f"Tonyn conecto un {especial_nombre_tonyn}""\n")
+
                     if salud_arnaldor == 0:
                         print(f"Tonyn es el victorioso con {salud_tonyn} de energia restante")
+                        resultado_final = (resultado_final + f"Tonyn es el victorioso con {salud_tonyn} de energia restante")
+
                         break
         if salud_tonyn > 0 and salud_arnaldor > 0:
             print("Tenemos un Empate. Ambos jugadores lucharon valerosamente hasta el ultimo minuto.")
+            resultado_final = (resultado_final + "Tenemos un Empate. Ambos jugadores lucharon valerosamente hasta el ultimo minuto.""\n")
+        return resultado_final
